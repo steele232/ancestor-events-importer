@@ -1,0 +1,1 @@
+get parent of person with link XXX-XXXX

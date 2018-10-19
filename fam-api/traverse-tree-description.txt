@@ -1,0 +1,1 @@
+description of algorithm to traverse the familysearch tree and get events
