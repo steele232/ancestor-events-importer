@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "e7e8dda6-2028-87a7-339b-a1fa99929f9b",
+		"name": "AncestorEventsImporter",
+		"description": "10/28/18 - Ancestor Events Importer\n\n12/12/17 - wanted to make Ancestor Birthdays notifications-app ... but didn't make it too far :P\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Familysearch Auth INIT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "password",
+							"value": "{{ sandbox user account password }}",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{ valid working app key }}",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "{{ sandbox user account username }}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://identint.familysearch.org/cis-web/oauth2/v3/token",
+					"protocol": "https",
+					"host": [
+						"identint",
+						"familysearch",
+						"org"
+					],
+					"path": [
+						"cis-web",
+						"oauth2",
+						"v3",
+						"token"
+					]
+				},
+				"description": "GET TOKEN"
+			},
+			"response": []
+		},
+		{
+			"name": "Current Person",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ valid token from Familysearch Auth INIT }}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/x-gedcomx-v1+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api-integ.familysearch.org/platform/tree/current-person?Expect=200-ok",
+					"protocol": "https",
+					"host": [
+						"api-integ",
+						"familysearch",
+						"org"
+					],
+					"path": [
+						"platform",
+						"tree",
+						"current-person"
+					],
+					"query": [
+						{
+							"key": "Expect",
+							"value": "200-ok"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parents of Person",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ valid token from Familysearch Auth INIT }}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/x-gedcomx-v1+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api-integ.familysearch.org/platform/tree/persons/{{current_user_id}}/parents?Expect=200-ok",
+					"protocol": "https",
+					"host": [
+						"api-integ",
+						"familysearch",
+						"org"
+					],
+					"path": [
+						"platform",
+						"tree",
+						"persons",
+						"{{current_user_id}}",
+						"parents"
+					],
+					"query": [
+						{
+							"key": "Expect",
+							"value": "200-ok"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ancestry",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ valid token from Familysearch Auth INIT }}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/x-gedcomx-v1+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api-integ.familysearch.org/platform/tree/ancestry?person={{current_user_id}}",
+					"protocol": "https",
+					"host": [
+						"api-integ",
+						"familysearch",
+						"org"
+					],
+					"path": [
+						"platform",
+						"tree",
+						"ancestry"
+					],
+					"query": [
+						{
+							"key": "person",
+							"value": "{{current_user_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8ee3926e-39c0-4bf0-97e8-0171ec1a7c4b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "dc1e3d4a-acf0-4b8e-96ed-efd6fd364043",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
