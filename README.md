@@ -26,3 +26,7 @@ Provide an easy way to get reminders about ancestor life events
    1. Preferred time of notifications
    1. Just delete this one notification, for this one event
 
+# Contributing
+Take a moment to look at the CONTRIBUTING.md file to see if there is anyplace that you can contribute. 
+As of right now (10/28/18), we might be open to having help with the iOS version of this app. 
+
