@@ -2,6 +2,8 @@
 
 I hope that this will answer many questions relating to how to use the FamilySearch API in the application.
 
+If this doesn't answer your questions, you can message me, or ask a question to the [FamilySearch Developer Network Google Group](https://groups.google.com/a/ldsmail.net/forum/#!forum/fsdn)
+
 ## The Postman Collection
 
 The purpose of the Postman collection is to make it as EASY as possible for collaborators and contributors to test out the endpoints and know how to implement the in-app services we want. Postman makes it easy to see exactly what urls, methods, parameters, headers and authorizations are needed for the HTTP request to go through, and examples of what the response from the API should look like.
@@ -57,3 +59,11 @@ Here are some ideas/examples for using the FS API to implement future features.
 
 1. If we wanted to make it easier to add life-events from great aunts and uncles, instead of just direct ancestors, then we would want to traverse the tree with /ancestry and then call an endpoint to get the family relationships of each direct ancestor and add those persons into the preview staging area. 
 1. If we want to add ancestors that are not direct ancestors of the user (maybe direct ancestors of the spouse of the user), then we might want to change the root user (id) that we call /ancestry from. The user would then be supplying that and we would want to have some fairly robust error-handling there, and maybe some input-validation.
+
+# FAQ
+
+## Creating a FamilySearch Developer account
+.. IDK . I just googled "FamilySearch developer account" and I made an account pretty easily.
+
+## Common Authentication Problems
+- I came across a problem that was, apparently, kind of common and I just had to email devsupport@familysearch.org to have them fix it for me. It was a setting in my account, I guess. [Here is the Link](https://groups.google.com/a/ldsmail.net/forum/#!topic/fsdn/RQnZh8RopCk) to the Google Group Discussion about it. 
