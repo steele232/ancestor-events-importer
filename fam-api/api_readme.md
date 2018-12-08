@@ -65,5 +65,9 @@ Here are some ideas/examples for using the FS API to implement future features.
 ## Creating a FamilySearch Developer account
 .. IDK . I just googled "FamilySearch developer account" and I made an account pretty easily.
 
+## How do I log into my Integration (Sandbox) Account to add family members that I can test with?
+1. Go to https://integration.familysearch.org
+1. Log in with your sandbox username and password, which are given to you in the console of your FamilySearch developer account.
+
 ## Common Authentication Problems
 - I came across a problem that was, apparently, kind of common and I just had to email devsupport@familysearch.org to have them fix it for me. It was a setting in my account, I guess. [Here is the Link](https://groups.google.com/a/ldsmail.net/forum/#!topic/fsdn/RQnZh8RopCk) to the Google Group Discussion about it. 
